@@ -16,21 +16,7 @@ function setup() {
 function draw() {
   background(0);  
  
- hasCollided(bullet,wall);
-  drawSprites();
-}
-
-function hasCollided(lbullet,lwall){
-  bullet.velocityX = 8;
- bulletRightEdge = lbullet.x +lbullet.width;
- wallLeftEdge = lwall.x;
-
- if(bulletRightEdge >= wallLeftEdge)
- {
-   return true;
- }
-   return false;
-}
+ 
 if(hasCollided(bullet,wall))
 {
   bullet.velocityX = 0;
@@ -44,4 +30,18 @@ if(hasCollided(bullet,wall))
   {
     wall.shapeColor = color(0,255,0);
   }
+}
+  
+  drawSprites();
+}
+
+function hasCollided(lbullet,lwall){
+  bullet.velocityX = 8;
+ bulletRightEdge = lbullet.x +lbullet.width;
+ wallLeftEdge = lwall.x;
+ if(bulletRightEdge >= wallLeftEdge)
+ {
+   return true;
+ }
+   return false;
 }
